@@ -7,7 +7,8 @@
       "publicClient": true,
       "redirectUris": ["http://localhost/*"],
       "webOrigins": ["*"],
-      "standardFlowEnabled": true
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true
     },
     {
       "clientId": "quant-api",
@@ -27,7 +28,8 @@
       "credentials": [
         {
           "type": "password",
-          "value": "admin"
+          "value": "admin",
+          "temporary": false
         }
       ],
       "realmRoles": ["admin"]
@@ -39,7 +41,8 @@
       "credentials": [
         {
           "type": "password",
-          "value": "user"
+          "value": "user",
+          "temporary": false
         }
       ],
       "realmRoles": ["user"]
