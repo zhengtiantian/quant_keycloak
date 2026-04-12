@@ -24,7 +24,11 @@
     {
       "username": "admin",
       "enabled": true,
+      "email": "admin@local.quant",
       "emailVerified": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "requiredActions": [],
       "credentials": [
         {
           "type": "password",
@@ -37,7 +41,11 @@
     {
       "username": "user",
       "enabled": true,
+      "email": "user@local.quant",
       "emailVerified": true,
+      "firstName": "Normal",
+      "lastName": "User",
+      "requiredActions": [],
       "credentials": [
         {
           "type": "password",
