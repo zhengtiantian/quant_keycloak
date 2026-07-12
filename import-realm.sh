@@ -3,7 +3,7 @@ set -e
 
 echo "=== Loading environment variables from .env ==="
 
-# 自动加载项目根目录下的 .env 配置
+# Load .env from the project root
 if [ -f /opt/keycloak/.env ]; then
   set -a
   source /opt/keycloak/.env
