@@ -86,6 +86,7 @@
         "composite": true,
         "composites": {
           "realm": [
+            "quant-read",
             "quant-write"
           ]
         }
@@ -95,6 +96,7 @@
         "composite": true,
         "composites": {
           "realm": [
+            "quant-read",
             "quant-write"
           ]
         }
