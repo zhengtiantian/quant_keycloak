@@ -82,10 +82,32 @@
   "roles": {
     "realm": [
       {
-        "name": "admin"
+        "name": "admin",
+        "composite": true,
+        "composites": {
+          "realm": [
+            "quant-write"
+          ]
+        }
       },
       {
-        "name": "user"
+        "name": "user",
+        "composite": true,
+        "composites": {
+          "realm": [
+            "quant-write"
+          ]
+        }
+      },
+      {
+        "name": "quant-read",
+        "description": "R.5 phase 2 — read platform data. In default-roles-quant, so every principal including service accounts gets it.",
+        "composite": false
+      },
+      {
+        "name": "quant-write",
+        "description": "R.5 phase 2 — change state: record trades, run scripts. Deliberately NOT granted to the quant-ai service account, so an injected agent can read the platform but cannot record a trade.",
+        "composite": false
       }
     ]
   }
