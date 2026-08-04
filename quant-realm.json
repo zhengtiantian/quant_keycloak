@@ -77,6 +77,14 @@
       "realmRoles": [
         "user"
       ]
+    },
+    {
+      "username": "service-account-quant-ai",
+      "enabled": true,
+      "serviceAccountClientId": "quant-ai",
+      "realmRoles": [
+        "quant-read"
+      ]
     }
   ],
   "roles": {
