@@ -33,6 +33,7 @@
       "description": "Service account for the AI service (MCP tools, RAG, agents). Its own identity, deliberately not quant-api's: an AI service authenticating as the API service is indistinguishable in the audit log from the API acting on its own.",
       "enabled": true,
       "publicClient": false,
+      "secret": "${QUANT_AI_CLIENT_SECRET}",
       "serviceAccountsEnabled": true,
       "standardFlowEnabled": false,
       "directAccessGrantsEnabled": false,
