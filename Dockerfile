@@ -4,10 +4,10 @@ FROM quay.io/keycloak/keycloak:25.0.0
 # 切换为 root 用户以修改权限
 USER root
 
-# 拷贝 Realm 配置、导入脚本和 .env 文件
+# Realm and import script. No .env is baked in: credentials come from the environment at run
+# time (quant_docker/docker-compose.yml passes them; an optional /opt/keycloak/.env is still read).
 COPY quant-realm.json /opt/keycloak/data/import/quant-realm.json
 COPY import-realm.sh /opt/keycloak/
-COPY .env /opt/keycloak/.env
 
 # 修改导入脚本权限
 RUN chmod +x /opt/keycloak/import-realm.sh
@@ -19,4 +19,4 @@ USER keycloak
 EXPOSE 8080
 
 # 启动时加载 .env 并运行 Keycloak（带 realm 导入）
-ENTRYPOINT ["/bin/sh", "-c", "set -a && source /opt/keycloak/.env && /opt/keycloak/import-realm.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "set -a; [ -f /opt/keycloak/.env ] && . /opt/keycloak/.env; set +a; exec /opt/keycloak/import-realm.sh"]
